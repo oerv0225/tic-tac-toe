@@ -55,38 +55,46 @@ class Board extends Component {
     render () {
         const { board, start, winner } = this.state;
         return (
-            <div>
-            <Table style={{width: 200 }}>
-                <TableBody>
-                    { board.map((row, i) => {
-                            return (
-                                <TableRow key={i}>
-                                    <TableCell>
-                                        <Button
-                                            onClick={() => this.updateBoard(i, 0)}
-                                            disabled={(winner === 'X' || winner === 'O') ? 'disabled' : '' }>{row[0]}
-                                        </Button>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Button
-                                            onClick={() => this.updateBoard(i, 1)}
-                                            disabled={(winner === 'X' || winner === 'O') ? 'disabled' : '' }>{row[1]}
-                                        </Button>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Button
-                                            onClick={() => this.updateBoard(i, 2)}
-                                            disabled={(winner === 'X' || winner === 'O') ? 'disabled' : '' }>{row[2]}
-                                        </Button>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })
-                    }
-                </TableBody>
-            </Table>
-            It's { (start === 0) ? '0' : 'X' }'s turn <br></br>
-            Winner: { winner }
+            <div id="board_container" className="board_container">
+                <div className="notes">
+                TIC TAC TOE GAME
+                </div>
+                <Table className="board">
+                    <TableBody>
+                        { board.map((row, i) => {
+                                return (
+                                    <TableRow key={i}>
+                                        <TableCell>
+                                            <Button
+                                                className="big"
+                                                onClick={() => this.updateBoard(i, 0)}
+                                                disabled={(winner === 'X' || winner === 'O') ? 'disabled' : '' }>{row[0]}
+                                            </Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button
+                                                className="big"
+                                                onClick={() => this.updateBoard(i, 1)}
+                                                disabled={(winner === 'X' || winner === 'O') ? 'disabled' : '' }>{row[1]}
+                                            </Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button
+                                                className="big"
+                                                onClick={() => this.updateBoard(i, 2)}
+                                                disabled={(winner === 'X' || winner === 'O') ? 'disabled' : '' }>{row[2]}
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })
+                        }
+                    </TableBody>
+                </Table>
+                <div className="notes">
+                    It's { (start === 0) ? '0' : 'X' }'s turn <br></br>
+                    Winner: { winner }
+                </div>
             </div>
         )
     }

@@ -1,3 +1,27 @@
 .App {
   text-align: center;
 }
+
+.board_container {
+    display: inline-block;
+}
+
+.board {
+    background-color: white;
+}
+
+.notes {
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+}
+
+.big {
+    font-size: 25px !important;
+}
+
+td {
+    border: 1px solid #000 !important;
+    padding: 0px !important;
+}
